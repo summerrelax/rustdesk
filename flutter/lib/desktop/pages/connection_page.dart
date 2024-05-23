@@ -300,6 +300,7 @@ class _ConnectionPageState extends State<ConnectionPage>
   /// Callback for the connect button.
   /// Connects to the selected peer.
   void onConnect({bool isFileTransfer = false}) {
+    Clipboard.setData(ClipboardData(text: ''));
     var id = _idController.id;
     connect(context, id, isFileTransfer: isFileTransfer);
   }
