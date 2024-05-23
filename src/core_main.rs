@@ -247,11 +247,11 @@ pub fn core_main() -> Option<Vec<String>> {
                 std::fs::remove_file(&args[1]).ok();
                 return None;
             }
-        } else if args[0] == "--tray" {
-            if !crate::check_process("--tray", true) {
-                crate::tray::start_tray();
-            }
-            return None;
+        // } else if args[0] == "--tray" {
+        //     if !crate::check_process("--tray", true) {
+        //         crate::tray::start_tray();
+        //     }
+        //     return None;
         } else if args[0] == "--install-service" {
             log::info!("start --install-service");
             crate::platform::install_service();
