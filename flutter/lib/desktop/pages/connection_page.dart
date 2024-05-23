@@ -19,6 +19,8 @@ import '../../common/widgets/autocomplete.dart';
 import '../../models/platform_model.dart';
 import '../widgets/button.dart';
 
+bool _viewOnly = false;
+
 class OnlineStatusWidget extends StatefulWidget {
   const OnlineStatusWidget({Key? key, this.onSvcStatusChanged})
       : super(key: key);
