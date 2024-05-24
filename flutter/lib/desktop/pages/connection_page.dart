@@ -20,6 +20,7 @@ import '../../models/platform_model.dart';
 import '../widgets/button.dart';
 
 bool _viewOnly = false;
+bool viewOnlyGlobal = false;
 
 class OnlineStatusWidget extends StatefulWidget {
   const OnlineStatusWidget({Key? key, this.onSvcStatusChanged})
@@ -523,6 +524,16 @@ class _ConnectionPageState extends State<ConnectionPage>
                   },
                 )),
               ],
+            ),
+            CheckboxListTile( // checkbox for view-only, view_only
+              title: Text('View Only'),
+              value: _viewOnly,
+              onChanged: (bool? value) {
+                setState(() {
+                  _viewOnly = value ?? false;
+                  viewOnlyGlobal = _viewOnly;
+                });
+              },
             ),
             Padding(
               padding: const EdgeInsets.only(top: 13.0),
