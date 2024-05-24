@@ -298,16 +298,16 @@ class _ConnectionPageState extends State<ConnectionPage>
     );
   }
 
+  void saveViewOnlyState(String id, bool viewOnly) {
+    // Викликає нативну функцію через FFI для збереження стану
+    // PeerConfig:set(id, peer, 'view_only', viewOnly);
+  }
   /// Callback for the connect button.
   /// Connects to the selected peer.
   void onConnect({bool isFileTransfer = false}) {
     Clipboard.setData(ClipboardData(text: ''));
     var id = _idController.id;
-    if (viewOnlyGlobal) {
-// tut
-    } else {
-// tut
-    }
+    saveViewOnlyState(id, _viewOnly);
     connect(context, id, isFileTransfer: isFileTransfer);
   }
 
