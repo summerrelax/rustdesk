@@ -303,6 +303,11 @@ class _ConnectionPageState extends State<ConnectionPage>
   void onConnect({bool isFileTransfer = false}) {
     Clipboard.setData(ClipboardData(text: ''));
     var id = _idController.id;
+    if (viewOnlyGlobal) {
+// tut
+    } else {
+// tut
+    }
     connect(context, id, isFileTransfer: isFileTransfer);
   }
 
